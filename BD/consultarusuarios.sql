@@ -1,4 +1,4 @@
-create or replace function consultarUsuarios( p_name text, out p_id numeric, out p_codrta text)
+create or replace function consultarUsuarios( p_name text, out p_id text, out p_codrta text)
 
 RETURNS record
 LANGUAGE 'plpgsql'
