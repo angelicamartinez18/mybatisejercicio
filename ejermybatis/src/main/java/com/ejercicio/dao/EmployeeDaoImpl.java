@@ -26,11 +26,27 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		HashMap<Object, Object> parametrosInOout = new HashMap<Object, Object>();
 	
 		parametrosInOout.put("p_name",employeeName);
+		
 		employeeMapper.consultarempleados(parametrosInOout);
+		String pId=(String)parametrosInOout.get("p_id");//conversion a string
+		String pCodrta=(String)parametrosInOout.get("p_codrta");
+		
+		
+		if (pCodrta.equals("OK")&& (pId!=null)) {
+			employee = new Employee();
+			employee.setEmployeeId(pId);
+			employee.setEmployeeName(employeeName);
+		}
 		
 		
 		return employee;
+		
+		
+		
+		
 	}
+	
+	
 
 	
 

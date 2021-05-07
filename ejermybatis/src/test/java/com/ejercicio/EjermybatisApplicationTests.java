@@ -8,6 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.ejercicio.dao.EmployeeDaoImpl;
+import com.ejercicio.model.Employee;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -18,7 +19,13 @@ EmployeeDaoImpl employeeDaoImpl;
 @Test
 public void test()   {
 	try {
-		employeeDaoImpl.consultarempleado("lucy");
+		Employee employee= employeeDaoImpl.consultarempleado("mary");
+		if(employee!=null) {
+			System.out.println("el id es"+employee.getEmployeeId());
+		}else {
+			System.out.println("el empleado no existe");
+		}
+		
 	}catch(Exception e) {
 		e.printStackTrace();
 		

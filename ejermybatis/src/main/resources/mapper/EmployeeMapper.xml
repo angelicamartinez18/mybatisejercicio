@@ -14,9 +14,11 @@
     </resultMap>-->
     
     
-  <select  id="consultarempleados" statementType="CALLABLE" parameterType="com.ejercicio.model.Employee">
-  {call consultarempleados(
- 	#{p_name, jdbcType=VARCHAR, javaType=java.lang.String, mode=IN}
+  <select  id="consultarempleados" statementType="CALLABLE" parameterType="java.util.Map">
+  {call consultarusuarios(
+ 	#{p_name, jdbcType=VARCHAR, javaType=java.lang.String, mode=IN},
+ 	#{p_id, jdbcType=VARCHAR, javaType=java.lang.String, mode=OUT},
+ 	#{p_codrta, jdbcType=VARCHAR, javaType=java.lang.String, mode=OUT}
   )}
   
   
