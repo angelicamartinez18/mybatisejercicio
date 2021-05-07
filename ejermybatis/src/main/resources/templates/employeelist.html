@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Mi hola mundo en spring boot</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div align="center">
+<h2>Empleados</h2>
+
+<table border="1">
+		<tr th:each ="employee : ${employeeList}">
+		
+			<td th:utext="${employee.employeeId}"></td>
+			<td th:utext="${employee.employeeName}"></td>
+		</tr>
+
+</table>
+
+</div>
+
+
+
+</body>
+</html>

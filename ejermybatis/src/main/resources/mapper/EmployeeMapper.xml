@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper  namespace="com.ejercicio.mapper.EmployeeMapper">
+  
+  <select id="findEmployee"   resultType="com.ejercicio.model.Employee">
+  select * from employee
+  
+  </select>
+  
+ <!--   <resultMap id="ResultEmployee" type="com.ejercicio.model.Employee">
+        <result column="" property="" jdbcType="VARCHAR" />
+    </resultMap>-->
+    
+    
+  <select  id="consultarempleados" statementType="CALLABLE" parameterType="com.ejercicio.model.Employee">
+  {call consultarempleados(
+ 	#{p_name, jdbcType=VARCHAR, javaType=java.lang.String, mode=IN}
+  )}
+  
+  
+  
+  </select>
+  
+  </mapper>
