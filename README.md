@@ -1,0 +1,2 @@
+# mybatisejercicio
+ejercicio de mybatis 
